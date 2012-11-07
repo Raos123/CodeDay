@@ -2,3 +2,13 @@
   .navbar-inner
     .container
       = link_to "TimeKeeping", root_path, id: "logo"
+      %nav
+        %ul.nav.pull-right
+          -if signed_in?
+            -if can?(:create, Company)
+              %li= link_to "Add Company", new_company_path
+            -if can?(:create, Project)
+              %li= link_to "Add Project", new_project_path
+            %li= link_to "Sign out", signout_path, method: "delete"
+          -else
+            %li= link_to "Sign in", signin_path

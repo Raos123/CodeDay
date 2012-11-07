@@ -11,7 +11,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121107161106) do
+ActiveRecord::Schema.define(:version => 20121107165328) do
+
+  create_table "companies", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "website"
+    t.string   "first_address"
+    t.string   "second_address"
+    t.string   "third_address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "first_phone"
+    t.string   "second_phone"
+    t.string   "first_fax"
+    t.string   "second_fax"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "projects", :force => true do |t|
+    t.string   "name"
+    t.integer  "company_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "projects", ["company_id"], :name => "index_projects_on_company_id"
 
   create_table "roles", :force => true do |t|
     t.string   "role_type"

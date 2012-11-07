@@ -1,0 +1,46 @@
+.row
+  .span6.offset3
+    = render 'shared/error_messages', object:@company
+    
+    = form_for(@company) do |f|
+      
+      = f.label :name
+      = f.text_field :name
+    
+      = f.label :email
+      = f.text_field :email
+      
+      = f.label :website
+      = f.text_field :website
+      
+      = f.label :first_address, 'Address 1'
+      = f.text_field :first_address
+      
+      = f.label :second_address, 'Address 2'
+      = f.text_field :second_address
+      
+      = f.label :third_address, 'Address 3'
+      = f.text_field :third_address
+      
+      = f.label :city
+      = f.text_field :city
+      
+      = f.label :state
+      = f.text_field :state
+      
+      = f.label :zip
+      = f.text_field :zip
+      
+      = f.label :first_phone, 'Phone 1'
+      = f.text_field :first_phone
+      
+      = f.label :second_phone, 'Phone 2'
+      = f.text_field :second_phone
+      
+      = f.label :first_fax, 'Fax 1'
+      = f.text_field :first_fax
+      
+      = f.label :second_fax, 'Fax 2'
+      = f.text_field :second_fax
+      
+      = f.submit class: "btn btn-large btn-primary"

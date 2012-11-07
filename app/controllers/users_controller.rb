@@ -17,8 +17,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.save
-      flash[:success] = "User updated"
+    if @user.update_attributes params[:user]
+      flash[:success] = "Profile was successfuly updated."
     end
+    respond_with current_user
   end
 end

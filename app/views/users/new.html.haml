@@ -1,7 +1,2 @@
 %h1 Sign up
-
-.row
-  .span6.offset3
-    = form_for(User.new) do |user|
-      = render "form", user:user
-      = user.submit "Create my account", class: "btn btn-large btn-primary"
+= render 'form'
