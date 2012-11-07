@@ -6,6 +6,12 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'haml-rails'
+gem 'bcrypt-ruby', '3.0.1'
+gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate', '0.0.6'
+gem "cancan"
+gem 'bootstrap-sass', '2.0.0'
 
 
 # Gems used only for assets and not required
