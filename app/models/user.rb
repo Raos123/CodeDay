@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   before_save { self.email.downcase! }
   before_create :generate_remember_token
   
+  has_many :timers
+  
   #Validations
   validates :name, presence: true, length: { maximum: 50 }
 

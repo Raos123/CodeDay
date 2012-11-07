@@ -4,4 +4,6 @@ class Project < ActiveRecord::Base
 
   validates :company_id, presence: true
   validates :name, presence: true
+  
+  has_many :tasks, class_name: 'Timer'
 end

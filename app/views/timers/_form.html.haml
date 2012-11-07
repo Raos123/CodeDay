@@ -1,0 +1,18 @@
+.row
+  .span6.offset3
+    = form_for(@timer) do |f|
+      = render 'shared/error_messages', object:@timer
+            
+      = label_tag :customer
+      = select_tag :company, options_for_select(Company.all.map{|c| [c.name, c.id]})
+      
+      = f.label :project_id, "Project"
+      = f.select :project_id, []
+
+      = f.label :duration
+      = f.text_field :duration
+      
+      = f.label :description
+      = f.text_area :description
+      
+      = f.submit class: "btn btn-large btn-primary"

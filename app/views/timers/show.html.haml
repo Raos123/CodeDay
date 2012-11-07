@@ -1,0 +1,17 @@
+%p= link_to "Edit Timer", [:edit, @timer]
+%table
+  %tr
+    %td Duration
+    %td= number_with_precision @timer.duration, precision: 2
+  %tr
+    %td Company
+    %td= @timer.project.company.name
+  %tr
+    %td Project
+    %td= @timer.project.name
+  %tr
+    %td Timer
+    - if @timer.last_activated_at.nil?
+      %td= link_to "Start Timer", start_timer_path(@timer), method: :post
+    - else
+      %td= link_to "Stop Timer", stop_timer_path(@timer), method: :post

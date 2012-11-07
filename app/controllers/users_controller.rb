@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       sign_in @user
       flash[:success] = "Welcome to the TimeKeeping System!"
     end
-    respond_with @user, location: @user
+    respond_with @user, location: [:edit, @user]
   end
 
   def edit
@@ -20,6 +20,6 @@ class UsersController < ApplicationController
     if @user.update_attributes params[:user]
       flash[:success] = "Profile was successfuly updated."
     end
-    respond_with current_user
+    respond_with [:edit, @user]
   end
 end

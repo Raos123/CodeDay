@@ -11,6 +11,6 @@ class CompaniesController < ApplicationController
       flash[:success] = 'Company successfully created.'
     end
     
-    respond_with @company, location: current_user
+    respond_with @company, location: new_timer_path
   end
 end
