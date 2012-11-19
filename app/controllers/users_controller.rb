@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       sign_in @user
       flash[:success] = "Welcome to the TimeKeeping System!"
     end
-    respond_with @user, location: [:edit, @user]
+    respond_with @user
   end
 
   def edit
